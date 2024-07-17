@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgIf],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Ensure this is correct
 })
 export class AppComponent {
-  title = 'FirstApp';
+  show: boolean = false; // Default to false to hide initially
+
+  openPopup() {
+    this.show = true;
+  }
+
+  closePopup() {
+    this.show = false;
+  }
 }
