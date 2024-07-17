@@ -19,4 +19,9 @@ export class AppComponent {
   closePopup() {
     this.show = false;
   }
+  closeoverlay(e:any){
+    if(e.target.classList.contains('overlay')){
+      this.show=false 
+    }
+  }
 }

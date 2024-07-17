@@ -2,13 +2,12 @@
   <button class="btn btn-primary" (click)="openPopup()">Popup</button>
 </div>
 
-<div class="overlay" *NgIf="show">
-  <div class="content">
-    <label for="username">Username:</label>
-    <input type="text" id="username" class="form-control">
-    <label for="password">Password:</label>
-    <input type="password" id="password" class="form-control">
-    <button class="btn btn-primary mt-4">SignIn</button>
-    <button class="btn btn-secondary mt-2" (click)="closePopup()">Close</button> <!-- Added close button -->
+<div class="overlay" *ngIf="show" (click)="closeoverlay($event)">
+  <div class="content"> 
+    <div class="close" (click)="closePopup()">
+      &times;</div>
+    username:<input type="text" class="form-control">
+    password:<input type="password" class="form-control">
+    <button class="btn btn-primary mt-4">Sign in</button>
   </div>
 </div>
